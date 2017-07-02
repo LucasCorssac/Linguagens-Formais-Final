@@ -33,6 +33,7 @@ namespace ConsoleApplication2
                 Console.WriteLine("Pressione R para ver as regras da Linguagem.");
                 Console.WriteLine("Pressione F para o reconhecedor de frases.");
                 Console.WriteLine("Pressione G para entrar no gerador de frases aleatórias.");
+                Console.WriteLine("Pressione H para entrar no gerador de frases aleatórias por tamanho.");
                 Console.WriteLine("Pressione N para inserir um novo arquivo de linguagem");
                 Console.WriteLine("Pressione I para informações sobre o grupo.");
                 Console.WriteLine("Pressione Escape para sair.");
@@ -89,6 +90,37 @@ namespace ConsoleApplication2
                             ChaveG = Console.ReadKey().Key;
 
                         } while (ChaveG == ConsoleKey.Enter);
+                        break;
+
+                    case ConsoleKey.H:
+                        ConsoleKey keyH = new ConsoleKey();
+
+                        do
+                        {
+                            string rndSentence = "";
+                            Console.WriteLine("Digite o tamanho da frase que deseja:");
+                            int sentenceSize = Convert.ToInt32(Console.ReadLine().ToString());
+                            for (int i = 0; i < sentenceSize; i++)
+                            {
+                                rndSentence = p.generateSentence(rndSentence);
+                            }
+                            Console.WriteLine(rndSentence);
+                            keyH = Console.ReadKey().Key;
+
+                        } while (keyH == ConsoleKey.Y);
+
+
+
+                        //do
+                        //{
+                        //    Console.WriteLine("Digite o tamanho da frase que deseja:");
+                        //    int sentenceSize = Convert.ToInt32(Console.ReadLine().ToString());
+                        //    Console.WriteLine(p.generateSentence(sentenceSize));
+
+                        //    Console.WriteLine("\nGerar de novo?");
+                        //    keyH = Console.ReadKey().Key;
+                        //} while (keyH == ConsoleKey.Y);
+                        
                         break;
 
                     case ConsoleKey.N:

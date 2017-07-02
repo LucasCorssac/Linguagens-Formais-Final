@@ -72,8 +72,6 @@ namespace ConsoleApplication2
                         StateStruct state = new StateStruct(variableToBeAdded, producao, 0, inputPointer);
                         D.SList.Add(state);
                         predictedSomething = true;
-                        //predict(D, state); // RECURSÃO!!!!!
-
                     }
 
                 }
